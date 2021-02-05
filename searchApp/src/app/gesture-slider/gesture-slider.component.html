@@ -1,0 +1,12 @@
+<div class="slider-section">
+    <div class="slider" (swipeleft)="onSwipeLeft()" (swiperight)="onSwipeRight()">
+        <div class="group-img" *ngFor="let item of showArray">
+            <img class="img" src="{{ item.images[0].url }}">
+            <div class="group-text">
+                <h3 class="txt-name">{{  (item.name.length > 30) ? (item.name | slice:0:30)+'...': (item.name) }}</h3>
+                <h5 class="txt-artist">{{ item.release_date | date:'yyyy' }}</h5>
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>

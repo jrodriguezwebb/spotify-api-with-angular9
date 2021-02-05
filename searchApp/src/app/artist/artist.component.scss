@@ -1,0 +1,38 @@
+.artist-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 10px;
+    .text-name {
+        color: black;
+    }
+    .img {
+        flex-direction: row;
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+        background-color: gray;
+        border: 1px #cdcdcd solid;
+        align-self: center;
+        object-fit: cover;
+        -webkit-box-shadow: 10px 10px 44px -22px rgba(0,0,0,0.77);
+        -moz-box-shadow: 10px 10px 44px -22px rgba(0,0,0,0.77);
+        box-shadow: 10px 10px 44px -22px rgba(0,0,0,0.77);
+    }
+}
+
+.group-text {
+    h5 {
+        margin-top: 0px;
+    }
+    flex-direction: row;
+    padding-left: 20px;    
+}
+
+hr {
+    border: 0 none;
+    border-top: 2px solid #e9e9e9;
+    height: 1px;
+    margin: 5px 0;
+    display: block;
+    clear: both;
+}

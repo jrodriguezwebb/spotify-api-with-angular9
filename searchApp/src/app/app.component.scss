@@ -1,0 +1,116 @@
+@import '../styles.scss'; 
+
+.header {
+    width: 100%;
+    padding: 15px;
+    padding-left: 35px;
+    color: white;
+    background-color: rgb(39, 172, 213);
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    max-height: 20px;
+}
+
+.login {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    min-height: 200px;
+    padding-top: 50%;
+    button {
+        color: white;
+        padding: 12px 20px;
+        margin: 8px 0;
+        outline: none;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 25px;
+        box-sizing: border-box;
+        background-color: rgb(39, 172, 213);
+    }
+}
+
+.search-box{
+    width: 100%;
+    padding: 15px;
+}
+
+.footer{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding: 15px;
+    color: grey;
+    max-height: 20px;
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.albums {
+    width: 100%;
+    padding: 5px;
+}
+
+.tracks-title {
+    width: 100%;
+    padding: 5px;
+}
+
+.tracks {
+    min-height: 300px;
+}
+
+.artist {
+    width: 100%;
+    padding: 5px;
+}
+
+app-track-card {
+    flex-grow: 1;
+}
+
+.main {
+    background-color: white;
+    display: flex;
+    flex-flow: row wrap;
+    flex-direction: row;
+    justify-content: center;
+    min-width: 260px;
+    max-width: 350px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    -webkit-box-shadow: 10px 10px 44px -22px rgba(0,0,0,0.77);
+    -moz-box-shadow: 10px 10px 44px -22px rgba(0,0,0,0.77);
+    box-shadow: 10px 10px 44px -22px rgba(0,0,0,0.77);
+}
+
+article {
+    // border: 1px solid blue;
+    margin: 2px;
+    padding: 5px;
+}
+
+.sub-title {
+    margin-left: 10px;
+    color: grey;
+}
+
+@media (min-width: $tablet) {
+    article {
+        width: 300px;
+    }
+    .main {
+        max-width: 650px;
+    }
+}
+
+@media (min-width: $laptop) {
+    .main {
+        max-width: 750px;
+    }
+}

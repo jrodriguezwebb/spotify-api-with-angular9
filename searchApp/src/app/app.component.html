@@ -1,0 +1,37 @@
+<div class="wrapper">
+  <div class="main">
+    <header class="header">
+      <fa-icon [icon]="faMusic"></fa-icon> Spoty SearchApp 
+    </header>
+    <ng-container *ngIf="isAuthenticated">
+      <section class="search-box">
+        <app-search-box (itemSelectedEvent)="handleItemSelection($event)" ></app-search-box>
+      </section>
+      <section class="artist" *ngIf="artistInfo">
+        <p class="sub-title">Artist</p>
+        <app-artist [artistInfo]="artistInfo"></app-artist>
+      </section>
+      <section class="albums" *ngIf="albumsInfo">
+        <p class="sub-title">Albums</p>
+        <app-gesture-slider [data]="albumsInfo" ></app-gesture-slider>
+      </section>
+      <ng-container *ngIf="tracksInfo">
+        <section class="tracks-title">
+          <p class="sub-title">Tracks</p>
+        </section> 
+        <ng-container *ngFor="let track of tracksInfo">
+          <app-track-card [track]="track"></app-track-card>
+        </ng-container>
+      </ng-container>
+      <ng-container *ngIf="!tracksInfo">
+        <section class="tracks"></section>
+      </ng-container>
+    </ng-container>
+    <ng-container *ngIf="!isAuthenticated">
+      <section class="login">
+        <button (click)="doLogin()">Login with Spotify</button>
+      </section>
+    </ng-container>
+    <footer class="footer">SearchApp © 2021</footer>
+  </div>
+</div>

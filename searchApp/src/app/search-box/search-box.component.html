@@ -1,0 +1,36 @@
+<div class="container">
+    <form [formGroup]="form">
+        <input 
+            type="text"
+            name="Search"
+            class="search-box"
+            formControlName="q"
+            placeholder="Search.."
+            autocomplete="off"
+            #search
+            (click)="closeList(search.value)"
+        >
+        <select formControlName="type" (change)="getResults(search.value)" >
+            <option *ngFor="let type of types" [ngValue]="type">{{ type.toUpperCase() }}</option>
+        </select>
+    </form>
+    <div class="list" *ngIf="showListFlag">
+        <ul class="list-group" >
+            <ng-container *ngIf="results?.tracks">
+                <li  *ngFor="let track of results.tracks" (click)="selectItem(track)">
+                    {{ track.name }} - {{track.artists[0]?.name }} - <fa-icon [icon]="faMusic"></fa-icon> <hr>
+                </li>
+            </ng-container>
+            <ng-container *ngIf="results?.albums">
+                <li  *ngFor="let album of results.albums" (click)="selectItem(album)">
+                    {{ album.name }} - {{album.artists[0].name }} <fa-icon [icon]="faCompactDisc"></fa-icon> <hr>
+                </li>
+            </ng-container>
+            <ng-container *ngIf="results?.artists">
+                <li  *ngFor="let artist of results.artists" (click)="selectItem(artist)">
+                    {{ artist.name }} - <fa-icon [icon]="faGrinStars"></fa-icon> <hr>
+                </li>
+            </ng-container>
+        </ul>
+    </div>
+</div>
